@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { GlobalStyles } from './styles/global';
 import { useState } from 'react';
 import { Button } from './components/button';
+import { Life } from './components/life';
 
 export const App = () => {
   const [lifeA, setLifeA] = useState(8000);
@@ -24,13 +25,7 @@ export const App = () => {
           display: flex;
         `}
       >
-        <div
-          css={css`
-            flex: 1;
-          `}
-        >
-          {lifeA}
-        </div>
+        <Life life={lifeA} setLife={setLifeA} />
         <div
           css={css`
             display: flex;
@@ -46,13 +41,7 @@ export const App = () => {
             reset
           </Button>
         </div>
-        <div
-          css={css`
-            flex: 1;
-          `}
-        >
-          {lifeB}
-        </div>
+        <Life life={lifeB} setLife={setLifeB} />
       </div>
     </>
   );
