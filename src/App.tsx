@@ -1,14 +1,17 @@
 import { css } from '@emotion/react';
 import { GlobalStyles } from './styles/global';
 import { useState } from 'react';
+import { Button } from './components/button';
 
 export const App = () => {
   const [lifeA, setLifeA] = useState(8000);
   const [lifeB, setLifeB] = useState(8000);
 
   const handleReset = () => {
-    setLifeA(8000);
-    setLifeB(8000);
+    if (window.confirm('リセットしてOK?')) {
+      setLifeA(8000);
+      setLifeB(8000);
+    }
   };
 
   return (
@@ -35,13 +38,13 @@ export const App = () => {
             align-items: center;
           `}
         >
-          <button
+          <Button
             onClick={() => {
               handleReset();
             }}
           >
             reset
-          </button>
+          </Button>
         </div>
         <div
           css={css`
