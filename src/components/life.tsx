@@ -97,18 +97,44 @@ export const Life = ({ life, setLife }: Props) => {
             css={css`
               display: flex;
               flex-direction: column;
-              gap: 1rem;
+              gap: 0.2rem;
             `}
           >
             <input
-              type='number'
-              value={parseValue(state)}
-              onChange={(e) => setState(e.target.value)}
+              readOnly
+              value={state}
               css={css`
                 width: 100%;
                 font-size: 2rem;
               `}
             />
+            <div
+              css={css`
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                justify-items: center;
+                align-items: center;
+              `}
+            >
+              {['9', '8', '7', '6', '5', '4', '3', '2', '1', '0', '00'].map((item) => (
+                <Button
+                  onClick={() => {
+                    setState((s) => s + item);
+                  }}
+                  variant='square'
+                >
+                  {item}
+                </Button>
+              ))}
+              <Button
+                onClick={() => {
+                  setState((s) => s.slice(0, -1));
+                }}
+                variant='square'
+              >
+                del
+              </Button>
+            </div>
             <div
               css={css`
                 display: flex;

@@ -28,9 +28,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             `,
           variant === 'square' &&
             css`
-              font-size: 2rem;
-              width: 3rem;
-              height: 3rem;
+              font-size: 1.2rem;
+              width: 4rem;
+              height: 2rem;
             `,
         ]}
         {...props}
