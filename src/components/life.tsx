@@ -11,14 +11,6 @@ interface Props {
 export const Life = ({ life, setLife }: Props) => {
   const [open, setOpen] = React.useState(false);
   const [state, setState] = React.useState('');
-  const parseValue = (value: string) => {
-    const parsed = parseInt(value, 10);
-    if (Number.isNaN(parsed)) {
-      return '';
-    }
-
-    return parsed;
-  };
 
   const plus = () => {
     setLife((l) => {
