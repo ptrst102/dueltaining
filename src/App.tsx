@@ -1,3 +1,13 @@
+import { css } from '@emotion/react';
+
 export const App = () => {
-  return <p>hello world</p>;
+  return (
+    <p
+      css={css`
+        color: #ff0000;
+      `}
+    >
+      hello world
+    </p>
+  );
 };
