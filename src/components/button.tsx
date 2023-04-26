@@ -1,22 +1,38 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'normal' | 'square';
+};
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ type = 'button', children, ...props }, ref) => {
+  ({ type = 'button', variant = 'normal', children, ...props }, ref) => {
     return (
       <button
         ref={ref}
         type={type}
-        css={css`
-          padding: 0.5rem;
-          color: #333;
-          background-color: #cccccc;
-          border: #999999 solid 1px;
-          :hover {
-            background-color: #dddddd;
-          }
-        `}
+        css={[
+          css`
+            color: #333;
+            background-color: #cccccc;
+            border: #999999 solid 1px;
+            :hover {
+              background-color: #dddddd;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          `,
+          variant === 'normal' &&
+            css`
+              padding: 0.5rem;
+            `,
+          variant === 'square' &&
+            css`
+              font-size: 2rem;
+              width: 3rem;
+              height: 3rem;
+            `,
+        ]}
         {...props}
       >
         <span>{children}</span>
