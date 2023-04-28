@@ -92,7 +92,7 @@ export const Life = ({ life, setLife, addHistory }: Props) => {
             css={css`
               display: flex;
               flex-direction: column;
-              gap: 0.2rem;
+              gap: 0.8rem;
             `}
           >
             <input
