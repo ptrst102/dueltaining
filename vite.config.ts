@@ -8,6 +8,33 @@ export default defineConfig({
     react({
       jsxImportSource: '@emotion/react',
     }),
-    VitePWA({ registerType: 'autoUpdate' }),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'エンタメデュエル',
+        short_name: 'ｴﾝﾀﾒﾃﾞｭｴﾙ',
+        description: 'エンタメデュエル用の電卓です。',
+        icons: [
+          {
+            src: 'app_icon/icon-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'app_icon/icon-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: 'app_icon/icon-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+        start_url: 'index.html',
+        lang: 'ja',
+      },
+    }),
   ],
 });
