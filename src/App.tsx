@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { GlobalStyles } from './styles/global';
 import { Button } from './components/button';
 import { Life } from './components/life';
