@@ -6,9 +6,10 @@ import { Dialog, DialogContent, DialogTrigger } from './dialog';
 interface Props {
   life: number;
   setLife: React.Dispatch<React.SetStateAction<number>>;
+  addHistory: () => void;
 }
 
-export const Life = ({ life, setLife }: Props) => {
+export const Life = ({ life, setLife, addHistory }: Props) => {
   const [open, setOpen] = React.useState(false);
   const [state, setState] = React.useState('');
 
@@ -21,6 +22,7 @@ export const Life = ({ life, setLife }: Props) => {
       return l + parsed;
     });
     setState('');
+    addHistory();
     setOpen(false);
   };
 
@@ -34,6 +36,7 @@ export const Life = ({ life, setLife }: Props) => {
       return result > 0 ? result : 0;
     });
     setState('');
+    addHistory();
     setOpen(false);
   };
 

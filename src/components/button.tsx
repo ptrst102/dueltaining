@@ -21,6 +21,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             display: flex;
             justify-content: center;
             align-items: center;
+            :disabled {
+              opacity: 0.5;
+              pointer-events: none;
+            }
           `,
           variant === 'normal' &&
             css`
