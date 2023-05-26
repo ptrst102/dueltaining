@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@emotion/react';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'normal' | 'square';
+  variant?: 'normal' | 'large' | 'full';
 };
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ type = 'button', variant = 'normal', children, ...props }, ref) => {
@@ -30,11 +30,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             css`
               padding: 0.5rem;
             `,
-          variant === 'square' &&
+          variant === 'large' &&
             css`
               font-size: 1.2rem;
-              width: 4rem;
-              height: 2rem;
+              width: 50%;
+              height: 2.5rem;
+            `,
+          variant === 'full' &&
+            css`
+              font-size: 1.2rem;
+              width: 100%;
+              height: 2.5rem;
             `,
         ]}
         {...props}

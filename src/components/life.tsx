@@ -116,7 +116,7 @@ export const Life = ({ life, setLife, addHistory }: Props) => {
                   onClick={() => {
                     setState((s) => s + item);
                   }}
-                  variant='square'
+                  variant='full'
                 >
                   {item}
                 </Button>
@@ -125,7 +125,7 @@ export const Life = ({ life, setLife, addHistory }: Props) => {
                 onClick={() => {
                   setState((s) => s.slice(0, -1));
                 }}
-                variant='square'
+                variant='full'
               >
                 del
               </Button>
@@ -138,10 +138,10 @@ export const Life = ({ life, setLife, addHistory }: Props) => {
                 align-items: center;
               `}
             >
-              <Button onClick={plus} variant='square'>
+              <Button onClick={plus} variant='large'>
                 ＋
               </Button>
-              <Button onClick={minus} variant='square'>
+              <Button onClick={minus} variant='large'>
                 －
               </Button>
             </div>

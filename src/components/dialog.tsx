@@ -23,8 +23,7 @@ export const DialogContent = React.forwardRef<HTMLDivElement, DialogPrimitive.Di
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 90vw;
-          max-width: 450px;
+          width: 85vw;
           max-height: 85vh;
           padding: 25px;
         `}
