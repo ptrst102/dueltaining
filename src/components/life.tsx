@@ -62,6 +62,7 @@ export const Life = ({ life, setLife, addHistory }: Props) => {
                 justify-content: center;
                 align-items: center;
                 gap: 0.5rem;
+                user-select: none;
               `,
               life <= 500 &&
                 life > 0 &&
@@ -101,6 +102,7 @@ export const Life = ({ life, setLife, addHistory }: Props) => {
               css={css`
                 width: 100%;
                 font-size: 2rem;
+                outline-color: transparent;
               `}
             />
             <div
